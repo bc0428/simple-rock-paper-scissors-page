@@ -7,7 +7,7 @@ background-color: black;
     flex-direction: column;
     /* align-content: center; */
     
-    padding: 15%;
+    
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -27,12 +27,12 @@ button{
     font-size: 80px;
     border-radius: 12px;
     border-style: solid;
-    background-color: white;
+    background-color: black;
     border: 0px;
 }
 
 button:active{
-    transform:scale(1.5)
+    transform:scale(2)
 }
 
 button:hover{
@@ -51,4 +51,11 @@ button:hover{
     
     padding: 15px;
     
+}
+.title{
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: xx-large;
+    font-weight: 900;
 }
