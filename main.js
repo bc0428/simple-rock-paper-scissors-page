@@ -2,6 +2,9 @@ const buttons = document.querySelectorAll('button')
 const results = document.querySelector('.results')
 const computer_choices = ['rock', 'paper', 'scissors']
 
+const player_score = document.querySelector('.player_score')
+const computer_score = document.querySelector('.computer_score')
+
 function playRound(e){
     player_play = String(e.target.className)
     computer_play = computer_choices[Math.floor(Math.random() * computer_choices.length)]
@@ -11,12 +14,22 @@ function playRound(e){
         result = 'its a draw'
     }
     else{
-        if (player_play == 'paper' && computer_play == 'rock'){result = 'you win'}
-        if (player_play == 'paper' && computer_play == 'scissors'){result = 'you lose'}
-        if (player_play == 'scissors' && computer_play == 'rock'){result = 'you lose'}
-        if (player_play == 'scissors' && computer_play == 'paper'){result = 'you win'}
-        if (player_play == 'rock' && computer_play == 'paper'){result = 'you lose'}
-        if (player_play == 'rock' && computer_play == 'scissors'){result = 'you win'}
+        if (player_play == 'paper' && computer_play == 'rock' || 
+            player_play == 'scissors' && computer_play == 'paper' || 
+            player_play == 'rock' && computer_play == 'scissors'){
+
+                player_score.textContent = parseInt(player_score.textContent) +1
+                result = 'you win'
+            }
+        
+
+        if (player_play == 'paper' && computer_play == 'scissors' ||
+            player_play == 'scissors' && computer_play == 'rock' || 
+            player_play == 'rock' && computer_play == 'paper'){
+
+                computer_score.textContent = parseInt(computer_score.textContent) +1
+                result = 'you lose'
+            }
     }
     displayResult(player_play,computer_play,result)
 }

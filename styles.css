@@ -1,5 +1,5 @@
 body{
-background-color: grey;
+background-color: black;
 }
 
 .box{
@@ -40,4 +40,15 @@ button:hover{
 }
 .results{
     text-align: center;
+    color: white;
+
+    margin: 15px;
+}
+.score{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    
+    padding: 15px;
+    
 }
